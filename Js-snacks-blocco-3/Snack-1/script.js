@@ -18,12 +18,12 @@
 // - codice giocatore, percentuale punti per partita e successo tiri da 3 li definiamo tramite funzioni
 const playerCard = [
     {
-        persId: 'SDF234',
+        persId: setId() + getRandNumInt(100, 999),
         firstName: 'Michael',
-        lastName: ' Jordan',
+        lastName: 'Jordan',
         age: 28,
-        pointForMatch: getRandNumInt(0, 50) + ' pfm',
-        percSucc3Points: getRandNumPerc(0, 100).toFixed(1) + '%',
+        pointForMatch: getRandNumInt(0, 50),
+        percSucc3Points: parseFloat(getRandNumPerc(0, 100).toFixed(1)),
     }
 ];
 console.table(playerCard);
@@ -38,19 +38,32 @@ console.table(playerCard);
 
 
 
+
 // 2 - Creo funzioni
+
 /**
 * 
 * Functions
 * 
 **/
 
-// Numero random intero
+// Generatore codice giocatore
+function setId () {
+    let codeId = '';
+    let chars = 'ABCDEFGHILMNOPQRSTUVZ';
+    for (let i = 0; i < 3; i++) {
+        chars[Math.floor(Math.random () * chars.length)];
+        codeId += chars[Math.floor(Math.random () * chars.length)];
+    }
+    return codeId
+} 
+
+// Gen  Numero random intero
 function getRandNumInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-// Numero random per percentuale
+// Gen Numero random per percentuale
 function getRandNumPerc(min, max) {
     return Math.random() * (max - min + 1) + min;
 }
