@@ -28,6 +28,7 @@ const playerCard =
 
 // 3 - Stampo nome, cognome, età e codice giocatore.
 const {firstName, lastName, age, persId} = playerCard;
+console.log(firstName, lastName, age, persId);
 
 // 4 - Creo un array di 10 giocatori
 const team10 = [
