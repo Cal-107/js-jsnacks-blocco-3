@@ -14,4 +14,43 @@
 // 4. Creare un array di 10 giocatori di basket, con le regole sopra indicate
 // 5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
 
-console.log('JS ok');
+// 1 - Creo un oggeto per un singolo giocatore con relative proprietà
+// - codice giocatore, percentuale punti per partita e successo tiri da 3 li definiamo tramite funzioni
+const playerCard = [
+    {
+        persId: 'SDF234',
+        firstName: 'Michael',
+        lastName: ' Jordan',
+        age: 28,
+        pointForMatch: getRandNumInt(0, 50) + ' pfm',
+        percSucc3Points: getRandNumPerc(0, 100).toFixed(1) + '%',
+    }
+];
+console.table(playerCard);
+
+
+
+
+
+
+
+
+
+
+
+// 2 - Creo funzioni
+/**
+* 
+* Functions
+* 
+**/
+
+// Numero random intero
+function getRandNumInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+// Numero random per percentuale
+function getRandNumPerc(min, max) {
+    return Math.random() * (max - min + 1) + min;
+}
